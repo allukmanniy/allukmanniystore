@@ -1,0 +1,138 @@
+<!Doctype html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="index.css"> 
+<link rel="stylesheet" type="text/css" href="credential.css"> 
+<style type="text/css">
+
+</style>
+<script src="https://kit.fontawesome.com/07fa3d3b0b.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+ function validate(){
+ let nameError = document.getElementById("nameError");
+ let passError = document.getElementById("passError");
+ let confPassError = document.getElementById("confPassError");
+ let emailError = document.getElementById("emailError");
+ 
+ if(document.signUp.name.value==""){
+    nameError.innerHTML = "Please don't leave Name field Blank";
+	document.signUp.name.focus();
+	return false;
+ }
+ else if(document.signUp.name.value.length<2){
+    nameError.innerHTML = "The length of the name field should be more than 2";
+	document.signUp.name.focus();
+	return false;
+ }
+ else if(!/^[a-zA-Z()]+$/.test(document.signUp.name.value)){
+    nameError.innerHTML = "The name field should be Alphabetic";
+	document.signUp.name.focus();
+	return false;
+ }
+ else if(document.signUp.email.value==""){
+    emailError.innerHTML = "Please Don't leave Email Field Blank";
+	document.signUp.email.focus();
+	return false;
+ }
+ else if(document.signUp.email.value.length<=2){
+    emailError.innerHTML = "The length of the email field should be more than 2";
+	document.signUp.email.focus();
+	return false;
+ }
+ else if(document.signUp.password.value==""){
+    passError.innerHTML = "Fill the Passsword Field";
+	document.signUp.password.focus();
+	return false;
+ }
+ else if(document.signUp.password.value.length<=4){
+    passError.innerHTML = "The length of the password field should be more than 4";
+	document.signUp.password.focus();
+	return false;
+ }
+ else if(document.signUp.confPassword.value==""){
+    confPassError.innerHTML = "Fill the Confirm Passsword Field";
+	document.signUp.confPassword.focus();
+	return false;
+ }
+ else if(document.signUp.confPassword.value!== document.signUp.password){
+    confPassError.innerHTML = "Confirm Password Field Must be the same with Password Field";
+	document.signUp.confPassword.focus();
+	return false;
+ }
+ else{
+   alert(document.signUp.name.value+"has Successfully Create an Account");
+ }
+ }
+</script>
+</head>
+<body>
+<header>
+<div id="logo">
+<img src="images/assets/logo.png">
+</div>
+<div id="navbar">
+<a href="index.html"><button class="nav">Home</button></a>
+<a href="products.html"><button class="nav">Products</button></a>
+<a href="login.html"><button class="nav">Login</button></a>
+<a href="signup.html"><button class="active">Create an Account</button></a>
+</div>
+</header>
+<section id="content-box">
+<section class="content">
+<form action="" method="" name="signUp" onsubmit="return(validate());">
+<div id="desc">
+<i class="fas fa-user-circle fa-4x" style="display:flex;justify-content:center;margin-bottom:15px;color:#f000ad;"></i>
+<h4>Create an Account</h4>
+</div>
+<div class="input-box">
+<p>Name:</p>
+<input type="text" name="name" placeholder="Your Name"/>
+<div id="nameError"></div>
+</div>
+
+<div class="input-box">
+<p>Email:</p>
+<input type="text" name="email" placeholder="Your Email"/>
+<div id="emailError"></div>
+</div>
+<div class="input-box">
+<p>Password:</p>
+<input type="password" name="password" placeholder="Your Password"/>
+<div id="passError"></div>
+</div>
+<div class="input-box">
+<p>Confirm Password:</p>
+<input type="password" name="confPassword" placeholder="Re-Enter Password"/>
+<div id="confPassError"></div>
+</div>
+<div class="input-box">
+<input type="submit" name="submit" value="Submit"/>
+</div>
+</form>
+</section>
+</section>
+<footer>
+<div id="ads">
+<img src="images/assets/shopifyad.png">
+<img src="images/assets/applead.png">
+<img src="images/assets/uberad.png">
+<img src="images/assets/porchead.png">
+</div>
+<div id="newsletter">
+<h2>Subscribe to Our Newsletter</h2>
+<form action="" method="">
+<input type="email" name="email" placeholder="Your Email"/>
+<input type="text" name="name" placeholder="Your Name"/>
+<input type="button" name="submit" value="Submit"/>
+</form>
+</div>
+<div id="foot">
+<a href="about.html"><span>About Us</span></a>
+<a href ="privacy.html"><span>Privacy Policy</span></a>
+<a href="contacts.html"><span>Contact Us</span></a>
+<span>Allukmanniy Store 2023</span>
+<img src="images/assets/paymentlogos.png" id="">
+</div>
+</footer>
+</body>
+</html>

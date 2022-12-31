@@ -1,0 +1,99 @@
+<!Doctype html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="index.css"> 
+<link rel="stylesheet" type="text/css" href="credential.css"> 
+<style type="text/css">
+
+</style>
+<script src="https://kit.fontawesome.com/07fa3d3b0b.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+ function validate(){
+ let passError = document.getElementById("passError");
+ let emailError = document.getElementById("emailError");
+ if(document.signUp.email.value==""){
+    emailError.innerHTML = "Please Don't leave Email Field Blank";
+	document.signUp.email.focus();
+	return false;
+ }
+ else if(document.signUp.email.value.length<=2){
+    emailError.innerHTML = "The length of the email field should be more than 2";
+	document.signUp.email.focus();
+	return false;
+ }
+ else if(document.signUp.password.value==""){
+    passError.innerHTML = "Fill the Passsword Field";
+	document.signUp.password.focus();
+	return false;
+ }
+ else if(document.signUp.password.value.length<=4){
+    passError.innerHTML = "The length of the password field should be more than 4";
+	document.signUp.password.focus();
+	return false;
+ }
+  else{
+   Successfully.alert("Login Successfully");
+ }
+ }
+ </script>
+</head>
+<body>
+<header>
+<div id="logo">
+<img src="images/assets/logo.png">
+</div>
+<div id="navbar">
+<a href="index.html"><button class="nav">Home</button></a>
+<a href="products.html"><button class="nav">Products</button></a>
+<a href="login.html"><button class="active">Login</button></a>
+<a href="signup.html"><button class="nav">Create an Account</button></a>
+</div>
+</header>
+<section id="content-box">
+<section class="content">
+<form action="" name="signUp" method="" onsubmit="return(validate());">
+<div id="desc">
+<i class="fas fa-lock fa-4x" style="display:flex;justify-content:center;margin-bottom:15px;color:#f000ad;"></i>
+<h4>Please provide your login Credentials</h4>
+</div>
+<div class="input-box">
+<p>Email:</p>
+<input type="email" name="email" placeholder="Your Email"/>
+<div id="emailError"></div>
+</div>
+<div class="input-box">
+<p>Password:</p>
+<input type="password" name="password" placeholder="Your Password"/>
+<div id="passError"></div>
+</div>
+<div class="input-box">
+<input type="submit" name="submit" value="Submit"/>
+</div>
+</form>
+</section>
+</section>
+<footer>
+<div id="ads">
+<img src="images/assets/shopifyad.png">
+<img src="images/assets/applead.png">
+<img src="images/assets/uberad.png">
+<img src="images/assets/porchead.png">
+</div>
+<div id="newsletter">
+<h2>Subscribe to Our Newsletter</h2>
+<form action="" method="">
+<input type="email" name="email" placeholder="Your Email"/>
+<input type="text" name="name" placeholder="Your Name"/>
+<input type="button" name="submit" value="Submit"/>
+</form>
+</div>
+<div id="foot">
+<a href="about.html"><span>About Us</span></a>
+<a href ="privacy.html"><span>Privacy Policy</span></a>
+<a href="contacts.html"><span>Contact Us</span></a>
+<span>Allukmanniy Store 2023</span>
+<img src="images/assets/paymentlogos.png" id="">
+</div>
+</footer>
+</body>
+</html>

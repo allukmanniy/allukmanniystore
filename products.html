@@ -1,0 +1,437 @@
+<!Doctype html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="index.css"> 
+<style type="text/css">
+.content{
+ width:96%;
+ padding:10px;
+ margin-bottom:3px;
+}
+</style>
+<script src="https://kit.fontawesome.com/07fa3d3b0b.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+ const showCartCont=()=>{
+    let showCont = document.getElementById("cartbox");
+  	showCont.style.display="block";
+ }
+ const hideCartCont=()=>{
+    let showCont = document.getElementById("cartbox");
+	showCont.style.display="none";
+ }
+ const prodId = [];
+ const productName = [];
+ const priceTag = [];
+ function addProduct(id,product,price){
+    prodId.push(id);
+    productName.push(product);
+	priceTag.push(price);
+	console.log(PriceTag=+price);
+	if(productName.length>0){
+	let tbl = document.getElementById("tbl");
+    for(let i=0; i<=productName.length; i++){
+   let td = document.createElement("td");
+   let canc = document.createElement("button");
+ td.innerText=productName.pop();
+ tbl.appendChild(td);
+ for(let k=0;k<=priceTag.length;k++){
+   console.log(priceTag);
+   let add = document.getElementById("sum");
+  add.innerText="$"+priceTag.reduce(getSum,0);
+   function getSum(total,num){
+   return total+Math.round(num);
+ }
+ }
+ }
+ const shop = document.getElementsByClassName("shop");
+/*if(priceTag.length>0){
+   for(let i=0;i<=priceTag.length;i++){
+    let priceBlk = document.createElement("span");
+	 priceBlk.innerText=priceTag.pop();
+	 tbl.appendChild(priceBlk);
+  }
+}*/
+ }
+ }
+ let counter = 0;
+ const addCounter =()=>{
+    counter+=1;
+	document.getElementById("counter").innerHTML=counter;
+		console.log("I got Clicked");
+ }
+ /*let counter = 0;
+ let shopButt = document.getElementsByClassName("shop");
+ shopButt.addEventListener('click',()=>{
+    counter=+1;
+	return counter;
+ });
+ sum.innerText = counter;
+ 	let ptbl = document.getElementById("ptbl");
+productName.forEach((item)=>{
+ let td = document.createElement("td");
+ td.innerText=item;
+ ptbl.appendChild(td);
+});*/
+</script> 
+</head>
+<body>
+<header>
+<div id="logo">
+<img src="images/assets/logo.png">
+</div>
+<div id="navbar">
+<a href="index.html"><button class="nav">Home</button></a>
+<a href="products.html"><button class="active">Products</button></a>
+<a href="login.html"><button class="nav">Login</button></a>
+<a href="signup.html"><button class="nav">Create an Account</button></a>
+</div>
+</header>
+<section id="prod-out">
+<section id="categories">
+<div id="cart">
+<i class="fas fa-shopping-cart fa-lg" onClick="showCartCont();"></i>
+<div id="counter">0</div>
+</div>
+<section class="cart-cont">
+<div id="cartbox">
+<table>
+<thead>
+<tr>
+<th>Products</th>
+</tr>
+</thead>
+<tbody>
+<tr id="tbl">
+</tr>
+</table>
+<div class="final">
+<div><span style="font-weight:bold;font-size:1.0em;color:#f000ad" id="sum"></span></big></div>
+<button class="checkout">Checkout</button>
+<button class="cancel" onClick="hideCartCont();">Cancel</button>
+</div>
+</section>
+<h1>Categories</h1
+<section id="content-box">
+<section class="content">
+<h4>Clothes</h4>
+<div class="products">
+<div class="prod-box">
+<div class="header">Suit & Tie</div>
+<img src="images/clothes/cloth2.png">
+<div class="footer">
+<span class="price">$70.00</span>
+<span class="shop" onClick="addProduct(1,'Suite&Tie',70.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">T-Shirt</div>
+<img src="images/clothes/cloth7.png">
+<div class="footer">
+<span class="price">$10.58</span>
+<span class="shop"onClick="addProduct(2,'T-Shirt',10.58);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Polo</div>
+<img src="images/clothes/cloth4.png">
+<div class="footer">
+<span class="price">$15.00</span>
+<span class="shop"onClick="addProduct(3,'Polo',15.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Female Shirt</div>
+<img src="images/clothes/cloth5.png">
+<div class="footer">
+<span class="price">$4.00</span>
+<span class="shop" onClick="addProduct(4,'Female Shirt',4.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Female Shirt</div>
+<img src="images/clothes/cloth8.png">
+<div class="footer">
+<span class="price">$10.00</span>
+<span class="shop" onClick="addProduct(5,'Female Shirt',10.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Shirt</div>
+<img src="images/clothes/cloth9.png">
+<div class="footer">
+<span class="price">$8.00</span>
+<span class="shop"onClick="addProduct(6,'Shirt',8.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Skirt</div>
+<img src="images/clothes/cloth3.png">
+<div class="footer">
+<span class="price">$5.00</span>
+<span class="shop" onClick="addProduct(7,'Skirt',5.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Blouse</div>
+<img src="images/clothes/cloth6.png">
+<div class="footer">
+<span class="price">$7.00</span>
+<span class="shop" onClick="addProduct(8,'Blouse',7.00);addCounter();">Shop</span>
+</div>
+</div>
+
+</div>
+</section>
+<section class="content">
+<h4>Footwears</h4>
+<div class="products">
+<div class="prod-box">
+<div class="header">Slippers</div>
+<img src="images/footwares/shoe5.png">
+<div class="footer">
+<span class="price">$4.00</span>
+<span class="shop" onClick="addProduct(39,'Slippers',4.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Slippers</div>
+<img src="images/footwares/shoe7.png">
+<div class="footer">
+<span class="price">$5.00</span>
+<span class="shop" onClick="addProduct(9,'Slippers',5.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Sandal</div>
+<img src="images/footwares/shoe3.png">
+<div class="footer">
+<span class="price">$13.00</span>
+<span class="shop" onClick="addProduct(10,'Sandal',30.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Sneakers</div>
+<img src="images/footwares/shoe10.png">
+<div class="footer">
+<span class="price">$15.00</span>
+<span class="shop" onClick="addProduct(13,'Sneakers',15.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Slippers</div>
+<img src="images/footwares/shoe4.png">
+<div class="footer">
+<span class="price">$10.00</span>
+<span class="shop" onClick="addProduct(14,'Slippers',10.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">High Heel</div>
+<img src="images/footwares/shoe2.png">
+<div class="footer">
+<span class="price">$13.00</span>
+<span class="shop" onClick="addProduct(15,'High Heel',13.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Sneakers</div>
+<img src="images/footwares/shoe8.png">
+<div class="footer">
+<span class="price">$20.00</span>
+<span class="shop" onClick="addProduct(16,'Sneakers',20.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Sandal</div>
+<img src="images/footwares/shoe6.png">
+<div class="footer">
+<span class="price">$7.00</span>
+<span class="shop" onClick="addProduct(17,'Sandal',7.00);addCounter();" >Shop</span>
+</div>
+</div>
+
+</div>
+</section>
+<section class="content">
+<h4>Jewelries</h4>
+<div class="products">
+<div class="prod-box">
+<div class="header">Bangles</div>
+<img src="images/jewelries/jewelry6.png">
+<div class="footer">
+<span class="price">$15.00</span>
+<span class="shop" onClick="addProduct(18,'Bangles',15.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Bangles</div>
+<img src="images/jewelries/jewelry1.png">
+<div class="footer">
+<span class="price">$7.00</span>
+<span class="shop" onClick="addProduct(19,'Bangles',7.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Smart Watch</div>
+<img src="images/jewelries/jewelry5.png">
+<div class="footer">
+<span class="price">$25.00</span>
+<span class="shop" onClick="addProduct(20,'Smart Watch',25.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Pendant</div>
+<img src="images/jewelries/jewelry10.png">
+<div class="footer">
+<span class="price">$15.00</span>
+<span class="shop" onClick="addProduct(21,'Pendant',15.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Chain+Pendant</div>
+<img src="images/jewelries/jewelry11.png">
+<div class="footer">
+<span class="price">$11.00</span>
+<span class="shop" onClick="addProduct(22,'Chain&Pendant',11.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Chain</div>
+<img src="images/jewelries/jewelry9.png">
+<div class="footer">
+<span class="price">$8.00</span>
+<span class="shop" onClick="addProduct(23,'Chain',8.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Wrist Watch</div>
+<img src="images/jewelries/jewelry3.png">
+<div class="footer">
+<span class="price">$10.00</span>
+<span class="shop" onClick="addProduct(24,'Wrist Watch',10.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Women Wrist Watch</div>
+<img src="images/jewelries/jewelry2.png">
+<div class="footer">
+<span class="price">$12.00</span>
+<span class="shop" onClick="addProduct(25,'Women Wrist Watch',12.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Bangles</div>
+<img src="images/jewelries/jewelry7.png">
+<div class="footer">
+<span class="price">$7.00</span>
+<span class="shop" onClick="addProduct(26,'Bangles',7.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Bangles</div>
+<img src="images/jewelries/jewelry8.png">
+<div class="footer">
+<span class="price">$10.00</span>
+<span class="shop" onClick="addProduct(27,'Bangles',10.00);addCounter();">Shop</span>
+</div>
+</div>
+</section>
+</section>
+
+<section class="content">
+<h4>Caps</h4>
+<div class="products">
+<div class="prod-box">
+<div class="header">Face Cap</div>
+<img src="images/caps/cap1.png">
+<div class="footer">
+<span class="price">$10.00</span>
+<span class="shop" onClick="addProduct(28,'Face Cap',10.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Bucket Hat</div>
+<img src="images/caps/cap3.png">
+<div class="footer">
+<span class="price">$7.00</span>
+<span class="shop" onClick="addProduct(29,'Bucket Hat',7.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Face Cap</div>
+<img src="images/caps/cap2.png">
+<div class="footer">
+<span class="price">$10.00</span>
+<span class="shop" onClick="addProduct(30,'Face Cap',10.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Hat</div>
+<img src="images/caps/cap4.png">
+<div class="footer">
+<span class="price">$4.00</span>
+<span class="shop" onClick="addProduct(31,'Hat',4.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Winter Cap</div>
+<img src="images/caps/cap8.png">
+<div class="footer">
+<span class="price">$5.00</span>
+<span class="shop" onClick="addProduct(32,'Winter Cap',5.00);addCounter();">Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Christmas Cap</div>
+<img src="images/caps/cap5.png">
+<div class="footer">
+<span class="price">$3.25</span>
+<span class="shop" onClick="addProduct(33,'Christmas Cap',3.25);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Hat</div>
+<img src="images/caps/cap7.png">
+<div class="footer">
+<span class="price">$8.00</span>
+<span class="shop" onClick="addProduct(34,'Hat',8.00);addCounter();" >Shop</span>
+</div>
+</div>
+<div class="prod-box">
+<div class="header">Winter Cap</div>
+<img src="images/caps/cap9.png">
+<div class="footer">
+<span class="price">$8.00</span>
+<span class="shop" onClick="addProduct(35,'Winter Cap',8.00);addCounter();" >Shop</span>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<footer>
+<footer>
+<div id="ads">
+<img src="images/assets/shopifyad.png">
+<img src="images/assets/applead.png">
+<img src="images/assets/uberad.png">
+<img src="images/assets/porchead.png">
+</div>
+<div id="newsletter">
+<h2>Subscribe to Our Newsletter</h2>
+<form action="" method="">
+<input type="email" name="email" placeholder="Your Email"/>
+<input type="text" name="name" placeholder="Your Name"/>
+<input type="button" name="submit" value="Submit"/>
+</form>
+</div>
+<div id="foot">
+<a href="about.html"><span>About Us</span></a>
+<a href ="privacy.html"><span>Privacy Policy</span></a>
+<a href="contacts.html"><span>Contact Us</span></a>
+<span>Allukmanniy Store 2023</span>
+<img src="images/assets/paymentlogos.png" id="">
+</div>
+</footer>
+</body>
+</html>
